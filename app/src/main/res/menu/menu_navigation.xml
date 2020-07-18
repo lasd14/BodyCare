@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/rutinas"
+        android:title="RUTINAS"
+        android:icon="@drawable/medical"/>
+
+    <item
+        android:id="@+id/imc"
+        android:title="IMC"
+        android:icon="@drawable/bathroom"/>
+
+    <item
+        android:id="@+id/recetas"
+        android:title="RECETAS"
+        android:icon="@drawable/fruit"/>
+
+
+
+</menu>

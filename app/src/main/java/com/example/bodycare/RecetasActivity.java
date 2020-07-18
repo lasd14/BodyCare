@@ -9,18 +9,18 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class RecetasActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_recetas);
 
         //Inicializar controles
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         //Inicial
-        bottomNavigationView.setSelectedItemId(R.id.rutinas);
+        bottomNavigationView.setSelectedItemId(R.id.recetas);
 
         //Seleccionador
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
 
-                    case R.id.rutinas:
+                    case R.id.recetas:
                         return true;
 
-                    case R.id.recetas:
-                        startActivity(new Intent(getApplicationContext(), RecetasActivity.class));
+                    case R.id.rutinas:
+                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                 }
