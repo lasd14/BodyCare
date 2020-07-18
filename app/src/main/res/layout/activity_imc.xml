@@ -6,13 +6,96 @@
     android:layout_height="match_parent"
     tools:context=".ImcActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="IMC"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"/>
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:gravity="start"
+            android:text="Introduzca su peso: "
+            android:textColor="@color/colorAccent"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:background="@drawable/redondeados"
+            android:textColor="@color/colorPrimaryDark"
+            android:inputType="number"
+            android:id="@+id/etpeso"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:gravity="start"
+            android:text="Introduzca su altura: "
+            android:textColor="@color/colorAccent"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:background="@drawable/redondeados"
+            android:textColor="@color/colorPrimaryDark"
+            android:inputType="number"
+            android:id="@+id/etaltura"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btncalcular"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/botonredondeado"
+                android:text="Calcular"
+                android:textColor="@android:color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="67dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:text="20"
+                android:textColor="@color/colorAccent"
+                android:textSize="50dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:src="@drawable/balance" />
+
+
+
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
