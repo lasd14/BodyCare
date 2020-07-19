@@ -6,13 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".RecetasActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Recetas"
-        android:textSize="50sp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"/>
+        android:onClick="Recargar"
+        android:text="Recargar" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="AgregarReceta"
+        android:text="Crear Receta" />
+
+    <ListView
+        android:id="@+id/lstSF"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="30dp">
+
+    </ListView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
