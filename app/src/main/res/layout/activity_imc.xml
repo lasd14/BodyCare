@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".ImcActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -96,6 +100,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -103,9 +108,10 @@
                 android:id="@+id/btnhistorial"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginBottom="50dp"
                 android:background="@drawable/botonredondeado"
                 android:text="Historial"
                 android:textColor="@android:color/white"
@@ -116,9 +122,10 @@
                 android:id="@+id/btnguardar"
                 android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp"
                 android:background="@drawable/botonredondeado"
                 android:text="Guardar"
                 android:textColor="@android:color/white"
@@ -128,9 +135,9 @@
 
         </LinearLayout>
 
-
-
     </LinearLayout>
+
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
