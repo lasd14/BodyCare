@@ -7,40 +7,88 @@
     android:orientation="vertical"
     tools:context=".GuardarRecetaActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Llene los campos"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
+        android:textSize="35dp"/>
+
+
     <EditText
         android:id="@+id/edtImg"
         android:hint="Introduzca el link de su imagen"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:inputType="text"
+        android:background="@drawable/textoredondeado"/>
 
     <EditText
         android:id="@+id/edtTitulo"
         android:hint="Introduzca el titulo de la receta"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:inputType="text"
+        android:background="@drawable/textoredondeado"/>
 
     <EditText
         android:id="@+id/edtIngredientes"
         android:hint="Introduzca los ingredientes"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textColorHint="@color/colorPrimaryDark"
+        android:inputType="text"
+        android:background="@drawable/textoredondeado"/>
 
     <EditText
         android:id="@+id/edtPreparacion"
-        android:hint="Introduzca los pasos de la preparación"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textoredondeado"
+        android:hint="Introduzca los pasos de la preparación"
+        android:inputType="text"
+        android:textColorHint="@color/colorPrimaryDark" />
 
     <EditText
         android:id="@+id/edtDescripcion"
-        android:hint="Introduzca una descripción"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/textoredondeado"
+        android:hint="Introduzca una descripción"
+        android:inputType="text"
+        android:textColorHint="@color/colorPrimaryDark" />
 
     <Button
         android:text="Guardar"
         android:onClick="GuardarReceta"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="20dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:background="@drawable/botonredondeado"/>
 
 </LinearLayout>

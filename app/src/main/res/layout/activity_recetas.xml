@@ -4,26 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context=".RecetasActivity">
 
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="Recargar"
-        android:text="Recargar" />
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center|top"
+        android:orientation="horizontal">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="AgregarReceta"
-        android:text="Crear Receta" />
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:onClick="Recargar"
+            android:background="@drawable/botonredondeado"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:text="Actualizar" />
+
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="AgregarReceta"
+            android:background="@drawable/botonredondeado"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:text="Agregar" />
+
+    </LinearLayout>
 
     <ListView
         android:id="@+id/lstSF"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="30dp">
+        android:layout_marginTop="85dp"
+        android:layout_marginBottom="70dp"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="true"
+        android:dividerHeight="20dp"
+        android:divider="@android:color/white">
 
     </ListView>
 
