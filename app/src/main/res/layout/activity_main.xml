@@ -27,7 +27,7 @@
             android:layout_gravity="center"
             android:src="@drawable/hombres"
             android:id="@+id/hombres"
-            android:onClick=""/>
+            android:onClick="verRuinasHombres"/>
 
     </LinearLayout>
 

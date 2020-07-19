@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -43,6 +44,21 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+    }
+
+    public  void verRuinasHombres(View view){
+
+        Intent i = new Intent(getApplicationContext(),RutinashombreActivity.class);
+        startActivity(i);
+
+
+    }
+
+    public  void verRuinasMujeress(){
+        Intent i = new Intent(getApplicationContext(),RutinashombreActivity.class);
+        startActivity(i);
+
 
     }
 }

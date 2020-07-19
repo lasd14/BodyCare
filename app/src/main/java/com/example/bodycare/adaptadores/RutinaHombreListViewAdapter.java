@@ -9,41 +9,46 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.bodycare.R;
-import com.example.bodycare.entidades.Receta;
-import com.squareup.picasso.Picasso;
+import java.util.ArrayList;
+import java.util.List;
+import com.example.bodycare.entidades.RutinaHombre;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecetasListViewAdapter extends ArrayAdapter<Receta> {
-    private List<Receta> recetasC = new ArrayList<>();
+public class RutinaHombreListViewAdapter extends ArrayAdapter<RutinaHombre> {
+    private List<RutinaHombre> rutinaHombres = new ArrayList<>();
     Context context;
-    int resource;
 
-    public RecetasListViewAdapter(Context context, List<Receta> datos){
-        super(context, R.layout.listview_recetas,datos);
-        recetasC = datos;
-        this.context = context;
 
+    public RutinaHombreListViewAdapter(Context context, List<RutinaHombre> datos){
+        super(context, R.layout.listview_rutinas_hombre,datos);
 
     }
 
-
     public View getView(int position, View convertView, ViewGroup parent) {
+
 
         LayoutInflater inflater =LayoutInflater.from(getContext());
         View item = inflater.inflate(R.layout.listview_recetas,null);
 
 
         ImageView img = (ImageView)item.findViewById(R.id.imgfoto);
-        Picasso.get().load(String.valueOf(recetasC.get(position).getImagen())).resize(100,100).into(img);
+        img.setImageResource(rutinaHombres.get(position).getFoto());
 
 
         TextView titulo = (TextView)item.findViewById(R.id.lbltitulo);
-        titulo.setText(recetasC.get(position).getTitulo());
+        titulo.setText(rutinaHombres.get(position).getTitulo());
 
         TextView descripcion = (TextView)item.findViewById(R.id.lbldescripcion);
-        descripcion.setText(recetasC.get(position).getDescripcion());
+        descripcion.setText(rutinaHombres.get(position).getDescripcion());
         return (item);
+
+
     }
+
+
+
+
+
 }
