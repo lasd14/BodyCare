@@ -2,8 +2,12 @@ package com.example.bodycare;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.bodycare.adaptadores.RutinaMujerListViewAdapter;
 import com.example.bodycare.entidades.RutinaMujer;
@@ -22,6 +26,7 @@ public class RutinamujerActivity extends AppCompatActivity {
 
         lstSf = (ListView)findViewById(R.id.lstSF);
         this.LoasList();
+        OnListItemEvents();
 
 
     }
@@ -30,15 +35,38 @@ public class RutinamujerActivity extends AppCompatActivity {
     public void LoasList(){
 
         List<RutinaMujer> rutinas = new ArrayList<>();
-
         rutinas.add(new RutinaMujer(R.drawable.rutina1, "Rutina 1", "Esta rutina trata de llevar a un fisico mejor", 1));
         rutinas.add(new RutinaMujer(R.drawable.rutina1, "Rutina 2", "Esta rutina trata de llevar a un fisico mejor", 2));
         rutinas.add(new RutinaMujer(R.drawable.rutina1, "Rutina 3", "Esta rutina trata de llevar a un fisico mejor", 3));
         rutinas.add(new RutinaMujer(R.drawable.rutina1, "Rutina 4", "Esta rutina trata de llevar a un fisico mejor", 4));
-
         RutinaMujerListViewAdapter adapter = new RutinaMujerListViewAdapter(getApplicationContext(),rutinas);
-
         lstSf.setAdapter(adapter);
 
     }
+
+
+
+    public void OnListItemEvents(){
+        lstSf.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(getApplicationContext(),VideoRutinaMujer.class);
+
+                //Enviamos la información con un putextra
+                String titulo = ((RutinaMujer)parent.getItemAtPosition(position)).getTitulo();
+                i.putExtra("titulo",titulo);
+
+                int idvideo = ((RutinaMujer)parent.getItemAtPosition(position)).getIdfoto();
+                i.putExtra("video",idvideo);
+
+
+
+                Toast.makeText(getApplicationContext(),"Selecciono: " + idvideo,Toast.LENGTH_LONG).show();
+                startActivity(i);
+
+            }
+        });
+    }
+
+
 }
