@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public  void verRuinasMujeress(){
-        Intent i = new Intent(getApplicationContext(),RutinashombreActivity.class);
+    public  void verRuinasMujeress(View view){
+        Intent i = new Intent(getApplicationContext(),RutinamujerActivity.class);
         startActivity(i);
 
 
