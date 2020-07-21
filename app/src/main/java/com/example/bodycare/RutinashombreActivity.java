@@ -18,9 +18,10 @@ public class RutinashombreActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rutinashombre);
-        this.LoadList();
+
 
         lstSF = (ListView)findViewById(R.id.lstSF);
+        this.LoadList();
     }
 
 
@@ -29,15 +30,15 @@ public class RutinashombreActivity extends AppCompatActivity {
 
     private void LoadList(){
 
-        List<RutinaHombre> rutina = new ArrayList<>();
-        rutina.add(new RutinaHombre(R.drawable.rutina1, "Rutina 1","Como quedo la tarea",1));
-        rutina.add(new RutinaHombre(R.drawable.rutina1,"Rutina 2","Te llego el mensaje que te dije",2));
-        rutina.add(new RutinaHombre(R.drawable.rutina1,"Rutina 3","Estubiste en clases ",3));
-        rutina.add(new RutinaHombre(R.drawable.rutina1,"Rutina 4","Pudiste correr el dia de ayer",4));
+        List<RutinaHombre> rutinas = new ArrayList<>();
+        rutinas.add(new RutinaHombre(R.drawable.rutina1, "Rutina 1","Como quedo la tarea",1));
+        rutinas.add(new RutinaHombre(R.drawable.rutina1,"Rutina 2","Te llego el mensaje que te dije",2));
+        rutinas.add(new RutinaHombre(R.drawable.rutina1,"Rutina 3","Estubiste en clases ",3));
+        rutinas.add(new RutinaHombre(R.drawable.rutina1,"Rutina 4","Pudiste correr el dia de ayer",4));
 
-        RutinaHombreListViewAdapter adapter = new RutinaHombreListViewAdapter(getApplicationContext(),rutina);
+        RutinaHombreListViewAdapter adapter1 = new RutinaHombreListViewAdapter(getApplicationContext(),rutinas);
 
-        lstSF.setAdapter(adapter);
+        lstSF.setAdapter(adapter1);
 
 
     }

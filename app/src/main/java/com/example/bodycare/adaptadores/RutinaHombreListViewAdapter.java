@@ -17,12 +17,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RutinaHombreListViewAdapter extends ArrayAdapter<RutinaHombre> {
-    private List<RutinaHombre> rutinaHombres = new ArrayList<>();
-    Context context;
+    private List<RutinaHombre> rutinas = new ArrayList<>();
+
 
 
     public RutinaHombreListViewAdapter(Context context, List<RutinaHombre> datos){
         super(context, R.layout.listview_rutinas_hombre,datos);
+        rutinas = datos;
 
     }
 
@@ -30,18 +31,22 @@ public class RutinaHombreListViewAdapter extends ArrayAdapter<RutinaHombre> {
 
 
         LayoutInflater inflater =LayoutInflater.from(getContext());
-        View item = inflater.inflate(R.layout.listview_recetas,null);
+        View item = inflater.inflate(R.layout.listview_rutinas_hombre,null);
 
 
         ImageView img = (ImageView)item.findViewById(R.id.imgfoto);
-        img.setImageResource(rutinaHombres.get(position).getFoto());
+        img.setImageResource(rutinas.get(position).getFoto());
 
 
         TextView titulo = (TextView)item.findViewById(R.id.lbltitulo);
-        titulo.setText(rutinaHombres.get(position).getTitulo());
+        titulo.setText(rutinas.get(position).getTitulo());
 
         TextView descripcion = (TextView)item.findViewById(R.id.lbldescripcion);
-        descripcion.setText(rutinaHombres.get(position).getDescripcion());
+        descripcion.setText(rutinas.get(position).getDescripcion());
+
+        TextView idvideo = (TextView)item.findViewById(R.id.lblidvideo);
+        idvideo.setText(Integer.toString( rutinas.get(position).getIdeVideo()  ));
+
         return (item);
 
 
