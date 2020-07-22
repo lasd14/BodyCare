@@ -26,7 +26,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class ImcActivity extends AppCompatActivity {
 
     EditText peso,altura,fecha;
-    TextView resultado;
+    TextView resultado, condicion;
 
 
 
@@ -36,6 +36,8 @@ public class ImcActivity extends AppCompatActivity {
         setContentView(R.layout.activity_imc);
 
         this.InicializarControles();
+
+
 
 
         //Inicializar controles
@@ -74,6 +76,8 @@ public class ImcActivity extends AppCompatActivity {
         peso = (EditText) findViewById(R.id.etpeso);
         fecha = (EditText)findViewById(R.id.fecha);
         resultado = (TextView) findViewById(R.id.lblresultado);
+        condicion = (TextView)findViewById(R.id.lblforma);
+
     }
 
 
@@ -89,12 +93,25 @@ public class ImcActivity extends AppCompatActivity {
         Double resultadoc = (pesoC/(alturaT*alturaT));
         BigDecimal b1 = new BigDecimal(resultadoc);
         MathContext m = new MathContext(4);
-
         BigDecimal result = b1.round(m);
-
+        Double calculoIMCE = result.doubleValue();
+        String resultadoE="";
+        if(calculoIMCE < 18.5 ){
+            resultadoE = "Bajo Peso";
+        }else if((calculoIMCE>=18.5)&&(calculoIMCE<=24.9)){
+            resultadoE = "Normal";
+        }else if ((calculoIMCE>=25.0)&&(calculoIMCE<=29.9)){
+            resultadoE = "Sobrepeso";
+        }else if ((calculoIMCE>=30.0)&&(calculoIMCE<=34.9)){
+            resultadoE = "Obesidad grado 1";
+        }else if ((calculoIMCE>=35.0)&&(calculoIMCE<=39.9)){
+            resultadoE = "Obesidad grado 2";
+        }else if (calculoIMCE>=40){
+            resultadoE = "Obesidad grado 3";
+        }
         resultado.setText(result.toString());
-
-
+        condicion.setText(resultadoE);
+        
     }
 
 
@@ -105,7 +122,7 @@ public class ImcActivity extends AppCompatActivity {
             String pesoA = peso.getText().toString();
             String fechaD = (fecha.getText().toString());
             String resultA = resultado.getText().toString();
-
+            String estado = condicion.getText().toString();
 
             //Abrimos la base de datos 'DB' en modo escritura
             DBBodyCareSQLiteHelper dbBodyCareSQLiteHelper = new DBBodyCareSQLiteHelper(this,"DBBodyCare",null,1);
@@ -115,53 +132,22 @@ public class ImcActivity extends AppCompatActivity {
             if(db !=null){
                 //Insertamos 1 receta
                 //inseramos en la tabla recipes
-
-
-
-
                 ContentValues newRegistry = new ContentValues();
                 newRegistry.put("usuario","Julio");
                 newRegistry.put("fecha",fechaD);
                 newRegistry.put("peso",pesoA);
                 newRegistry.put("imc",resultA);
-                newRegistry.put("imc","NORMAL");
-
+                newRegistry.put("estado",estado);
                 db.insert("masacorporal",null,newRegistry);
-
                 Toast.makeText(getApplicationContext(),"Guardado correctamente",Toast.LENGTH_SHORT).show();
-
-
                 //Cerramos la BD
-
                 db.close();
             }
-
         }catch (Exception e){
             Toast.makeText(getApplicationContext(),"Error: "+e.getMessage().toString(),Toast.LENGTH_SHORT).show();
         }
 
     }
-
-
-    public void CalcularEstado(){
-
-
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
