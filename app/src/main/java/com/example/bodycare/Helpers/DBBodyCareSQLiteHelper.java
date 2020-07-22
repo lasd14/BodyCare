@@ -12,7 +12,7 @@ public class DBBodyCareSQLiteHelper extends SQLiteOpenHelper {
 
     String sqlCreateComentarios = "CREATE TABLE comentarios(product TEXT, imagen TEXT, client TEXT, score TEXT,type TEXT, descripcion TEXT)";
 
-    String sqlCreateIMC = "CREATE TABLE masacorporal(usuario TEXT, fecha TEXT, peso TEXT, imc TEXT)";
+    String sqlCreateIMC = "CREATE TABLE masacorporal(usuario TEXT, fecha TEXT, peso TEXT, imc TEXT, estado TEXT)";
 
 
 

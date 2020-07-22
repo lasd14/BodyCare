@@ -124,6 +124,7 @@ public class ImcActivity extends AppCompatActivity {
                 newRegistry.put("fecha",fechaD);
                 newRegistry.put("peso",pesoA);
                 newRegistry.put("imc",resultA);
+                newRegistry.put("imc","NORMAL");
 
                 db.insert("masacorporal",null,newRegistry);
 
