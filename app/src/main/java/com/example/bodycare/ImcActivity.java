@@ -143,6 +143,14 @@ public class ImcActivity extends AppCompatActivity {
     }
 
 
+    public void CalcularEstado(){
+
+
+
+
+    }
+
+
 
 
 
