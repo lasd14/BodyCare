@@ -111,7 +111,7 @@ public class ImcActivity extends AppCompatActivity {
         }
         resultado.setText(result.toString());
         condicion.setText(resultadoE);
-        
+
     }
 
 

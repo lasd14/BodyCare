@@ -56,6 +56,10 @@ public class RutinamujerActivity extends AppCompatActivity {
                 String titulo = ((RutinaMujer)parent.getItemAtPosition(position)).getTitulo();
                 i.putExtra("titulo",titulo);
 
+                String Descripcion = ((RutinaMujer)parent.getItemAtPosition(position)).getDescripcion();
+                i.putExtra("descripcion",Descripcion);
+
+
                 int idvideo = ((RutinaMujer)parent.getItemAtPosition(position)).getIdfoto();
                 i.putExtra("video",idvideo);
 
