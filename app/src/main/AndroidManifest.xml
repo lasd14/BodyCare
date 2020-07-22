@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VideoRutinaMujer"></activity>
+        <activity android:name=".Historial"></activity>
+        <activity android:name=".VideoRutinaMujer" />
         <activity android:name=".RutinamujerActivity" />
         <activity android:name=".RutinashombreActivity" />
         <activity
