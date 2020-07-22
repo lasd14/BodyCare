@@ -11,7 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Historial"></activity>
+        <activity android:name=".LoginActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Historial" />
         <activity android:name=".VideoRutinaMujer" />
         <activity android:name=".RutinamujerActivity" />
         <activity android:name=".RutinashombreActivity" />
@@ -32,11 +40,7 @@
         <activity
             android:name=".MainActivity"
             android:label="Rutinas">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

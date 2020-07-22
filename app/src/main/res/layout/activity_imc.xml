@@ -122,6 +122,7 @@
                 android:layout_marginRight="10dp"
                 android:background="@drawable/botonredondeado"
                 android:text="Historial"
+                android:onClick="Historial"
                 android:textColor="@android:color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />

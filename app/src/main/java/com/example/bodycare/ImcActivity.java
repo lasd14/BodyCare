@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -101,10 +103,12 @@ public class ImcActivity extends AppCompatActivity {
     public void GuardarIMC(View view){
 
         try {
-
+            SharedPreferences prefs = getSharedPreferences("user", Context.MODE_PRIVATE);
+            String user = prefs.getString("name", "");
             String pesoA = peso.getText().toString();
-            String fechaD = (fecha.getText().toString());
+            String fechaD = fecha.getText().toString();
             String resultA = resultado.getText().toString();
+
 
 
             //Abrimos la base de datos 'DB' en modo escritura
@@ -115,18 +119,14 @@ public class ImcActivity extends AppCompatActivity {
             if(db !=null){
                 //Insertamos 1 receta
                 //inseramos en la tabla recipes
-
-
-
-
                 ContentValues newRegistry = new ContentValues();
-                newRegistry.put("usuario","Julio");
+                newRegistry.put("usuario",user);
                 newRegistry.put("fecha",fechaD);
                 newRegistry.put("peso",pesoA);
                 newRegistry.put("imc",resultA);
-                newRegistry.put("imc","NORMAL");
+                newRegistry.put("estado","NORMAL");
 
-                db.insert("masacorporal",null,newRegistry);
+                db.insert("imc",null,newRegistry);
 
                 Toast.makeText(getApplicationContext(),"Guardado correctamente",Toast.LENGTH_SHORT).show();
 
@@ -140,6 +140,11 @@ public class ImcActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Error: "+e.getMessage().toString(),Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    public void Historial(View view){
+        Intent i = new Intent(getApplicationContext(),Historial.class);
+        startActivity(i);
     }
 
 
