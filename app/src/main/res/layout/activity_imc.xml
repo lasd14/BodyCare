@@ -61,6 +61,18 @@
             android:inputType="number"
             android:id="@+id/etaltura"/>
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:background="@drawable/redondeados"
+            android:textColor="@color/colorPrimaryDark"
+            android:inputType="number"
+            android:id="@+id/fecha"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="110dp"
@@ -74,16 +86,18 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/botonredondeado"
                 android:text="Calcular"
+                android:onClick="CalcularIMC"
                 android:textColor="@android:color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TextView
-                android:layout_width="67dp"
+                android:id="@+id/lblresultado"
+                android:layout_width="138dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="20dp"
-                android:text="20"
+
                 android:textColor="@color/colorAccent"
                 android:textSize="50dp"
                 android:textStyle="bold" />
@@ -91,10 +105,10 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="240dp"
-            android:layout_height="240dp"
-            android:layout_marginTop="30dp"
+            android:layout_width="110dp"
+            android:layout_height="108dp"
             android:layout_gravity="center"
+            android:layout_marginTop="30dp"
             android:src="@drawable/balance" />
 
         <LinearLayout
@@ -114,6 +128,7 @@
                 android:layout_marginBottom="50dp"
                 android:background="@drawable/botonredondeado"
                 android:text="Historial"
+                android:onClick="Historial"
                 android:textColor="@android:color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -128,6 +143,7 @@
                 android:layout_marginBottom="50dp"
                 android:background="@drawable/botonredondeado"
                 android:text="Guardar"
+                android:onClick="GuardarIMC"
                 android:textColor="@android:color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />

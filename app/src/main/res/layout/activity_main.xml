@@ -22,7 +22,7 @@
             android:layout_gravity="center"
             android:src="@drawable/mujeres"
             android:id="@+id/mujeres"
-            android:onClick=""/>
+            android:onClick="verRuinasMujeress"/>
 
         <ImageButton
             android:layout_width="250dp"
@@ -32,7 +32,7 @@
             android:layout_gravity="center"
             android:src="@drawable/hombres"
             android:id="@+id/hombres"
-            android:onClick=""/>
+            android:onClick="verRuinasHombres"/>
 
     </LinearLayout>
 

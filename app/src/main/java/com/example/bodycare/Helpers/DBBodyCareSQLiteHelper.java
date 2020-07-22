@@ -12,6 +12,10 @@ public class DBBodyCareSQLiteHelper extends SQLiteOpenHelper {
 
     String sqlCreateComentarios = "CREATE TABLE comentarios(product TEXT, imagen TEXT, client TEXT, score TEXT,type TEXT, descripcion TEXT)";
 
+    String sqlCreateIMC = "CREATE TABLE imc(usuario TEXT, fecha TEXT, peso TEXT, imc TEXT, estado TEXT)";
+
+    String sqlCreateUsers = "CREATE TABLE usuarios(usuario TEXT, contrasena TEXT, tipo TEXT)";
+
     //constructor de la clase
 
     public DBBodyCareSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
@@ -23,6 +27,8 @@ public class DBBodyCareSQLiteHelper extends SQLiteOpenHelper {
 
         db.execSQL(sqlCreateRecetas);
         db.execSQL(sqlCreateComentarios);
+        db.execSQL(sqlCreateIMC);
+        db.execSQL(sqlCreateUsers);
     }
 
     @Override
@@ -35,6 +41,15 @@ public class DBBodyCareSQLiteHelper extends SQLiteOpenHelper {
 
         //Se crea la nueva versión de la tabla
         db.execSQL(sqlCreateRecetas);
+
+        db.execSQL("DROP TABLE IF EXISTS usuarios");
+
+        //Se crea la nueva versión de la tabla
+        db.execSQL(sqlCreateUsers);
+
+
+        db.execSQL("DROP TABLE IF EXISTS imc");
+        db.execSQL(sqlCreateIMC);
 
         db.execSQL("DROP TABLE IF EXISTS comentarios");
 

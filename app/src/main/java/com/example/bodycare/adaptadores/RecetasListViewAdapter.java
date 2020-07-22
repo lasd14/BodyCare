@@ -27,7 +27,10 @@ public class RecetasListViewAdapter extends ArrayAdapter<Receta> {
 
 
     }
+
+
     public View getView(int position, View convertView, ViewGroup parent) {
+
         LayoutInflater inflater =LayoutInflater.from(getContext());
         View item = inflater.inflate(R.layout.listview_recetas,null);
 
