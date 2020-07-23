@@ -11,14 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VideoRutinaHombre"></activity>
-        <activity android:name=".Historial" />
-        <activity android:name=".VideoRutinaMujer" />
-        <activity android:name=".RutinamujerActivity" />
-        <activity android:name=".RutinashombreActivity" />
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".VideoRutinaHombre" android:label="Rutina" android:parentActivityName=".RutinashombreActivity"/>
+        <activity android:name=".Historial" android:label="Historial" android:parentActivityName=".ImcActivity"/>
+        <activity android:name=".VideoRutinaMujer" android:label="Rutina" android:parentActivityName=".RutinamujerActivity"/>
+        <activity android:name=".RutinamujerActivity" android:label="Rutinas de Mujeres" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".RutinashombreActivity" android:label="Rutinas de Hombres" android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".RecetaActivity"
-            android:label="Detalles"
+            android:label="Detalles de Receta"
             android:parentActivityName=".RecetasActivity" />
         <activity
             android:name=".GuardarRecetaActivity"
@@ -33,11 +40,6 @@
         <activity
             android:name=".MainActivity"
             android:label="Rutinas">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

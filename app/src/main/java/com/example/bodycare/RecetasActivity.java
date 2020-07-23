@@ -3,7 +3,9 @@ package com.example.bodycare;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -25,7 +27,7 @@ import java.util.List;
 public class RecetasActivity extends AppCompatActivity {
 
     ListView listView;
-
+    Button delete, refresh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class RecetasActivity extends AppCompatActivity {
         this.InicializarControles();
         this.LoadList();
         this.OnListItemEvents();
+        this.GetData();
 
         //Inicializar controles
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -68,6 +71,8 @@ public class RecetasActivity extends AppCompatActivity {
 
     private void InicializarControles(){
         listView = (ListView)findViewById(R.id.lstSF);
+        delete   = (Button)findViewById(R.id.delete);
+        refresh  = (Button)findViewById(R.id.refresh);
     }
     public void AgregarReceta(View view){
         Intent i = new Intent(getApplicationContext(),GuardarRecetaActivity.class);
@@ -134,4 +139,21 @@ public class RecetasActivity extends AppCompatActivity {
     public void Recargar(View view){
         this.LoadList();
     }
+
+    private void GetData(){
+        SharedPreferences prefs = getSharedPreferences("user", Context.MODE_PRIVATE);
+        String type = prefs.getString("type", "");
+        if(type.equals("admin")){
+            delete.setVisibility(View.VISIBLE);
+            refresh.setVisibility(View.VISIBLE);
+        }
+//        if(type.equals("client")){
+//            save.setVisibility(View.VISIBLE);
+//            puntuacion.setVisibility(View.VISIBLE);
+//            comentario.setVisibility(View.VISIBLE);
+//
+//
+//        }
+    }
+
 }

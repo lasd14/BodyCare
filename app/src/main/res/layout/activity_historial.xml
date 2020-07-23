@@ -7,38 +7,24 @@
     android:orientation="vertical"
     tools:context=".Historial">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Estado"
-            android:id="@+id/lblestado"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Peso"
-            android:id="@+id/lblpeso"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="IMC"
-            android:id="@+id/lblimc"/>
-
-
-
-    </LinearLayout>
-
-
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="Historial de IMC"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30dp"/>
 
     <ListView
         android:id="@+id/lstSFH"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-        />
+        android:layout_marginTop="10dp"
+        android:footerDividersEnabled="false"
+        android:headerDividersEnabled="true"
+        android:dividerHeight="5dp"
+        android:divider="@android:color/white" />
 
 </LinearLayout>

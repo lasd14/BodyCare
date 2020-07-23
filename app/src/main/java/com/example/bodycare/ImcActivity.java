@@ -3,12 +3,17 @@ package com.example.bodycare;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +23,7 @@ import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.util.Calendar;
 
 
 import com.example.bodycare.Helpers.DBBodyCareSQLiteHelper;
@@ -27,6 +33,7 @@ public class ImcActivity extends AppCompatActivity {
 
     EditText peso,altura,fecha;
     TextView resultado, condicion;
+    DatePickerDialog picker;
 
 
 
@@ -74,9 +81,27 @@ public class ImcActivity extends AppCompatActivity {
 
         altura = (EditText)findViewById(R.id.etaltura);
         peso = (EditText) findViewById(R.id.etpeso);
-        fecha = (EditText)findViewById(R.id.fecha);
         resultado = (TextView) findViewById(R.id.lblresultado);
         condicion = (TextView)findViewById(R.id.lblforma);
+        fecha = (EditText)findViewById(R.id.fecha);
+        fecha.setInputType(InputType.TYPE_NULL);
+        fecha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
+                //Datepicker Dialog
+                picker = new DatePickerDialog(ImcActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        fecha.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                    }
+                }, year, month, day);
+                picker.show();
+            }
+        });
 
     }
 
@@ -119,6 +144,9 @@ public class ImcActivity extends AppCompatActivity {
 
         try {
 
+            SharedPreferences prefs = getSharedPreferences("user", Context.MODE_PRIVATE);
+            String user = prefs.getString("name", "");
+
             String pesoA = peso.getText().toString();
             String fechaD = (fecha.getText().toString());
             String resultA = resultado.getText().toString();
@@ -133,12 +161,12 @@ public class ImcActivity extends AppCompatActivity {
                 //Insertamos 1 receta
                 //inseramos en la tabla recipes
                 ContentValues newRegistry = new ContentValues();
-                newRegistry.put("usuario","Julio");
+                newRegistry.put("usuario", user);
                 newRegistry.put("fecha",fechaD);
                 newRegistry.put("peso",pesoA);
                 newRegistry.put("imc",resultA);
                 newRegistry.put("estado",estado);
-                db.insert("masacorporal",null,newRegistry);
+                db.insert("imc",null,newRegistry);
                 Toast.makeText(getApplicationContext(),"Guardado correctamente",Toast.LENGTH_SHORT).show();
                 //Cerramos la BD
                 db.close();
@@ -147,6 +175,11 @@ public class ImcActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Error: "+e.getMessage().toString(),Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    public void Historial(View view){
+        Intent i = new Intent(getApplicationContext(),Historial.class);
+        startActivity(i);
     }
 
 

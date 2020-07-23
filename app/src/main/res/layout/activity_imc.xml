@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:gravity="start"
             android:text="Introduzca su peso: "
             android:textColor="@color/colorAccent"
@@ -38,7 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="25dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:gravity="start"
             android:text="Introduzca su altura: "
             android:textColor="@color/colorAccent"
@@ -57,6 +57,17 @@
             android:inputType="number"
             android:id="@+id/etaltura"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:gravity="start"
+            android:text="Introduzca la fecha: "
+            android:textColor="@color/colorAccent"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,8 +77,9 @@
             android:padding="10dp"
             android:background="@drawable/redondeados"
             android:textColor="@color/colorPrimaryDark"
-            android:inputType="number"
+            android:inputType="date"
             android:id="@+id/fecha"/>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -102,18 +114,26 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Su indice de masa corporal es"/>
+            android:layout_gravity="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="Tu I.M.C. indica que tienes:"/>
 
         <TextView
             android:id="@+id/lblforma"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
         <ImageView
             android:layout_width="110dp"
             android:layout_height="108dp"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:src="@drawable/balance" />
 
         <LinearLayout
@@ -129,6 +149,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginRight="10dp"
+                android:onClick="Historial"
                 android:background="@drawable/botonredondeado"
                 android:text="Historial"
                 android:textColor="@android:color/white"

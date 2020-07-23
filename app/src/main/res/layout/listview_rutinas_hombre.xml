@@ -7,19 +7,25 @@
     android:layout_height="match_parent">
 
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
+        android:background="@drawable/bordecard"
         android:orientation="horizontal">
 
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-
+            android:src="@drawable/rutinahombre"
             android:id="@+id/imgfoto"/>
-
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -63,13 +69,10 @@
 
             </LinearLayout>
 
-
-
         </LinearLayout>
-
 
     </LinearLayout>
 
-
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

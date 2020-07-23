@@ -25,6 +25,8 @@
             android:background="@drawable/botonredondeado"
             android:textStyle="bold"
             android:textColor="@android:color/white"
+            android:visibility="gone"
+            android:id="@+id/refresh"
             android:textSize="20dp"
             android:text="Actualizar" />
 
@@ -40,6 +42,8 @@
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:textSize="20dp"
+            android:visibility="gone"
+            android:id="@+id/delete"
             android:text="Agregar" />
 
     </LinearLayout>
