@@ -50,6 +50,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:textSize="15dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
                     android:id="@+id/lbldescripcion"/>
 
             </LinearLayout>

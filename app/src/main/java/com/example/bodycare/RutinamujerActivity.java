@@ -35,10 +35,10 @@ public class RutinamujerActivity extends AppCompatActivity {
     public void LoasList(){
 
         List<RutinaMujer> rutinas = new ArrayList<>();
-        rutinas.add(new RutinaMujer(R.drawable.rutina1, "Rutina 1", "Esta rutina trata de llevar a un fisico mejor", 1));
-        rutinas.add(new RutinaMujer(R.drawable.rutina1, "Rutina 2", "Esta rutina trata de llevar a un fisico mejor", 2));
-        rutinas.add(new RutinaMujer(R.drawable.rutina1, "Rutina 3", "Esta rutina trata de llevar a un fisico mejor", 3));
-        rutinas.add(new RutinaMujer(R.drawable.rutina1, "Rutina 4", "Esta rutina trata de llevar a un fisico mejor", 4));
+        rutinas.add(new RutinaMujer(R.drawable.rutina1, "Rutina 1", "La tendencia «30 Days Squat Challenge» ha dado mucho que hablar, pero muchos se preguntan si realmente es posible adelgazar solo con sentadillas.", 1));
+        rutinas.add(new RutinaMujer(R.drawable.rutina2, "Rutina 2", "Ahora lo tienes claro, las sentadillas por sí solas no bastan para perder peso, en cambio, son excelentes para reafirmar y fortalecer el tren inferior.", 2));
+        rutinas.add(new RutinaMujer(R.drawable.rutina3, "Rutina 3", "La sentadilla o cuclilla es uno de los ejercicios básicos del entrenamiento de fuerza. Trabaja directamente los músculos de muslo, músculos de la cadera y glúteos", 3));
+        rutinas.add(new RutinaMujer(R.drawable.rutina4, "Rutina 4", "Este ejercicio se centra principalmente en los muslos (cuádriceps e isquiotibiales) y los glúteos, pero también trabaja la fuerza y la estabilidad del core, la movilidad de los tobillos y los músculos de la espalda, entre otros.", 4));
         RutinaMujerListViewAdapter adapter = new RutinaMujerListViewAdapter(getApplicationContext(),rutinas);
         lstSf.setAdapter(adapter);
 

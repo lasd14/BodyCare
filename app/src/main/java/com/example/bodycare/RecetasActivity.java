@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.bodycare.Helpers.DBBodyCareSQLiteHelper;
@@ -27,7 +28,8 @@ import java.util.List;
 public class RecetasActivity extends AppCompatActivity {
 
     ListView listView;
-    Button delete, refresh;
+    Button delete;
+    TextView tvrecetas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,9 +72,9 @@ public class RecetasActivity extends AppCompatActivity {
     }
 
     private void InicializarControles(){
-        listView = (ListView)findViewById(R.id.lstSF);
-        delete   = (Button)findViewById(R.id.delete);
-        refresh  = (Button)findViewById(R.id.refresh);
+        listView  = (ListView)findViewById(R.id.lstSF);
+        delete    = (Button)findViewById(R.id.delete);
+        tvrecetas = (TextView)findViewById(R.id.tvrecetas);
     }
     public void AgregarReceta(View view){
         Intent i = new Intent(getApplicationContext(),GuardarRecetaActivity.class);
@@ -136,17 +138,17 @@ public class RecetasActivity extends AppCompatActivity {
         }
 
     }
-    public void Recargar(View view){
-        this.LoadList();
-    }
 
     private void GetData(){
         SharedPreferences prefs = getSharedPreferences("user", Context.MODE_PRIVATE);
         String type = prefs.getString("type", "");
         if(type.equals("admin")){
             delete.setVisibility(View.VISIBLE);
-            refresh.setVisibility(View.VISIBLE);
         }
+        if (type.equals("client")){
+            tvrecetas.setVisibility(View.VISIBLE);
+        }
+
 //        if(type.equals("client")){
 //            save.setVisibility(View.VISIBLE);
 //            puntuacion.setVisibility(View.VISIBLE);

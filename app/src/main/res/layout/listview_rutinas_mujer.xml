@@ -23,7 +23,7 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/rutinamujer"
+            android:src="@drawable/bordesimage"
             android:id="@+id/imgfotoM"/>
 
         <LinearLayout
@@ -49,6 +49,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:textSize="15dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
                     android:id="@+id/lbldescripcionM"/>
 
             </LinearLayout>

@@ -12,41 +12,41 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:gravity="center|top"
+        android:gravity="end|top"
         android:orientation="horizontal">
 
-        <Button
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp"
-            android:onClick="Recargar"
-            android:background="@drawable/botonredondeado"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:visibility="gone"
-            android:id="@+id/refresh"
-            android:textSize="20dp"
-            android:text="Actualizar" />
-
 
         <Button
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="10dp"
-            android:onClick="AgregarReceta"
-            android:background="@drawable/botonredondeado"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:textSize="20dp"
-            android:visibility="gone"
             android:id="@+id/delete"
-            android:text="Agregar" />
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/botonredondeado"
+            android:onClick="AgregarReceta"
+            android:text="Agregar"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvrecetas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_gravity="center"
+        android:text="Últimas Recetas"
+        android:textColor="@color/colorAccent"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:visibility="gone" />
 
     <ListView
         android:id="@+id/lstSF"

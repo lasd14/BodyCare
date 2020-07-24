@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -45,6 +47,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu (Menu menu) {
+        getMenuInflater().inflate(R.menu.options_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId())
+        {
+            case R.id.mapa:
+                Intent mapa = new Intent(getApplicationContext(), MapsActivity.class);
+                startActivity(mapa);
+                return true;
+            case R.id.logout:
+                Intent logout = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(logout);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     public  void verRuinasHombres(View view){

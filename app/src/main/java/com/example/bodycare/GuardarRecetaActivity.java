@@ -3,6 +3,7 @@ package com.example.bodycare;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -56,6 +57,8 @@ public class GuardarRecetaActivity extends AppCompatActivity {
                 newRegistry.put("descripcion",descripcionR);
                 db.insert("recetas",null,newRegistry);
 
+                Intent guardado = new Intent(getApplicationContext(), RecetasActivity.class);
+                startActivity(guardado);
                 Toast.makeText(getApplicationContext(),"Guardado correctamente",Toast.LENGTH_SHORT).show();
 
 

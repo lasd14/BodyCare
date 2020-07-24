@@ -36,10 +36,10 @@ public class RutinashombreActivity extends AppCompatActivity {
     private void LoadList(){
 
         List<RutinaHombre> rutinas = new ArrayList<>();
-        rutinas.add(new RutinaHombre(R.drawable.rutina1, "Rutina 1","Como quedo la tarea",1));
-        rutinas.add(new RutinaHombre(R.drawable.rutina1,"Rutina 2","Te llego el mensaje que te dije",2));
-        rutinas.add(new RutinaHombre(R.drawable.rutina1,"Rutina 3","Estubiste en clases ",3));
-        rutinas.add(new RutinaHombre(R.drawable.rutina1,"Rutina 4","Pudiste correr el dia de ayer",4));
+        rutinas.add(new RutinaHombre(R.drawable.rutina1h, "Rutina 1","Para trabajar con la rueda abdominal comienza por hacer series de pocas repeticiones, como por ejemplo, 4 series de 5 a 7 repeticiones y ve avanzando. La dificultad aumenta conforme se realiza el ejercicio más lento. Para trabajar más los abdominales oblícuos puedes dirigir la rueda abdominal hacia los lados.",1));
+        rutinas.add(new RutinaHombre(R.drawable.rutina2h,"Rutina 2","El entrenamiento de intervalos de alta intensidad, es un entrenamiento de fuerza-resistencia, ya que combina ejercicios anaeróbicos y aeróbicos. Habitualmente las sesiones HIIT pueden variar de entre 4 y 30 minutos.",2));
+        rutinas.add(new RutinaHombre(R.drawable.rutina3h,"Rutina 3","Los ejercicios aeróbicos incluyen cualquier tipo de ejercicio que se practique a niveles moderados de intensidad durante períodos de tiempos extensos, lo que hace mantener una frecuencia cardíaca más elevada.",3));
+        rutinas.add(new RutinaHombre(R.drawable.rutina4h,"Rutina 4","Hacer sentadillas es un movimiento fundamental muy útil en todas las disciplinas deportivas y un ejercicio básico de fortalecimiento muscular. El principio consiste en ponerse de pie, con las piernas separadas a la altura de los hombros, los pies hacia fuera y la mirada hacia lo lejos.",4));
 
         RutinaHombreListViewAdapter adapter1 = new RutinaHombreListViewAdapter(getApplicationContext(),rutinas);
 
