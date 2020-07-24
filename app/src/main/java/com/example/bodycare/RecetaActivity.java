@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,6 +20,7 @@ import com.squareup.picasso.Picasso;
 public class RecetaActivity extends AppCompatActivity {
     ImageView imagen;
     TextView titulo, ingredientes, preparacion, descripcion;
+    Button urlboton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +35,19 @@ public class RecetaActivity extends AppCompatActivity {
         ingredientes = (TextView)findViewById(R.id.lblIngredientes);
         preparacion = (TextView)findViewById(R.id.lblPreparacion);
         descripcion = (TextView)findViewById(R.id.lblDescripcion);
+        urlboton    = (Button)findViewById(R.id.urlboton);
+
+        urlboton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent url = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.barufresh.com/"));
+                startActivity(url);
+            }
+        });
+
     }
+
+
 
     private void LoadReceta(){
         try {

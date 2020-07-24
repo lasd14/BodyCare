@@ -94,6 +94,31 @@
         android:layout_marginTop="15dp"
         android:textSize="20dp"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="COMPRA EN: "
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:textSize="20dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:id="@+id/urlboton"
+        android:background="@drawable/botonredondeado"
+        android:text="BaruFresh"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:textColor="@android:color/white"/>
+
 
 
 </LinearLayout>
